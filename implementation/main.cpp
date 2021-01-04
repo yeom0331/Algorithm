@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int n, cnt;
+int n, m, x, y, cnt, result, direction;
 string s;
 
 void A() { //UDLR -> simulation
@@ -47,9 +47,87 @@ void B() { //CLOCK -> full search
     cout << cnt << '\n';
 }
 
+void C() {  //Royal knight
+    cin >> s;
+    int dx[8] = {-2, -2, -1, -1, 1, 1, 2, 2};
+    int dy[8] = {-1, 1, -2, 2, -2, 2, -1 ,1};
+    int row = s[1] - '0';
+    int line = s[0] - 'a' + 1;
+
+    for(int i=0; i<8; i++) {
+        int nr = row + dx[i];
+        int nl = line + dy[i];
+        if(nr >= 1 && nr <= 8 && nl >= 1 && nl <= 8) {
+            result++;
+        }
+    }
+    cout << result << '\n';
+}
+
+void left() {
+    direction -= 1;
+    if(direction == -1) {
+        direction = 3;
+    }
+}
+
+void D() { //game development
+    int d[50][50];
+    int map[50][50];
+    int dx[4] = {1, -1, 0, 0};
+    int dy[4] = {0, 0, -1, 1};
+    int turn=0;
+
+    cin >> n >> m;
+    cin >> x >> y >> direction;
+
+    d[x][y] = 1;
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            int k;
+            cin >> k;
+            map[i][j] = k;
+        }
+    }
+
+    cnt = 1;
+    while(true) {
+        left();
+        int nx = x + dx[direction];
+        int ny = y + dy[direction];
+        if(d[nx][ny] == 0 && map[nx][ny] == 0) {
+            d[nx][ny] = 1;
+            x = nx;
+            y = ny;
+            cnt++;
+            turn = 0;
+            continue;
+        }
+        else {
+            turn++;
+        }
+
+        if(turn == 4) {
+            nx = x - dx[direction];
+            ny = y - dy[direction];
+            if(map[nx][ny] == 0) {
+                x = nx;
+                y = ny;
+            }
+            else {
+                break;
+            }
+            turn = 0;
+        }
+    }
+    cout << cnt << '\n';
+}
 
 int main()
 {
     //A();
-    B();
+    //B();
+    //C();
+    D();
 }
