@@ -187,7 +187,7 @@ void A() {
     cin >> n >> m;
     for(int i=0; i<n; i++) {
         for(int j=0; j<m; j++) {
-            scanf("%1d", &graph1[i][j]);
+            scanf("%d", &graph1[i][j]);
         }
     }
     for(int i=0; i<n; i++) {
@@ -200,6 +200,42 @@ void A() {
     cout << result << endl;
 }
 
+int escape_mirror_bfs(int x, int y) {
+    queue<pair<int, int>> q;
+    int dx[4] = {0, 0 -1, 1};
+    int dy[4] = {1, -1, 0 ,0};
+    q.push({x, y});
+    while(!q.empty()) {
+        int x = q.front().first;
+        int y = q.front().second;
+        q.pop();
+
+        for(int i=0; i<4; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+
+            if(nx<0 || nx >= n || ny<0 || ny >= m) continue;
+            if(graph1[nx][ny] == 0) continue;
+
+            if(graph1[nx][ny] == 1) {
+                graph1[nx][ny] = graph1[x][y] + 1;
+                q.push({nx, ny});
+            }
+        }
+    }
+    return graph1[n-1][m-1];
+}
+
+void escape_mirror() {
+    cin >> n >> m;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            scanf("%1d", &graph1[i][j]);
+        }
+    }
+    cout << escape_mirror_bfs(0,0) << endl;
+}
+
 int main()
 {
     //ex_stack();
@@ -210,5 +246,6 @@ int main()
     //adj_matrix();
     //dfs_main();
     //bfs_main();
-    A();
+    //A();
+    //escape_mirror();
 }
