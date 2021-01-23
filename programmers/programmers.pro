@@ -4,6 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        kth_number.cpp \
+        largest_number.cpp \
         printer.cpp \
         stock_price.cpp
 
