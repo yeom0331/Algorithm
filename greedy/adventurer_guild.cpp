@@ -5,7 +5,7 @@ using namespace std;
 int n;
 vector<int> fear;
 
-int main() {
+int ad_guild() {
     cin >> n;
     for(int i=0; i<n; i++) {
         int x = 0;

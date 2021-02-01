@@ -4,7 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    Xor+.cpp \
-    adventurer_guild.cpp \
+    g.cpp \
     main.cpp \
-    string_flip.cpp
+
+HEADERS += \
+    g.h

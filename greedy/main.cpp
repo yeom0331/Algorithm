@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "g.h"
 
 using namespace std;
 
@@ -111,4 +112,7 @@ int main()
     //D();
     //B_11399();
     //B_11047();
+    g3();
+    //g4();
+    //g5();
 }

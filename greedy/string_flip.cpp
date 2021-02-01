@@ -4,7 +4,7 @@ using namespace std;
 
 string s;
 
-int main() {
+int string_flip() {
     cin >> s;
 
     int count0 = 0;

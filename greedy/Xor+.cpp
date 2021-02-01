@@ -4,7 +4,7 @@ using namespace std;
 
 string s;
 
-int main() {
+int Xorp() {
     cin >> s;
 
     long long result = s[0] - '0';
