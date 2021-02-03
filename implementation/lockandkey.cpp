@@ -1,6 +1,6 @@
 #include "lockandkey.h"
 
-void match(vector<vector<int>> newLock, vector<vector<int>> key, int rot, int r, int c) {
+void match(int newLock[58][58], vector<vector<int>> key, int rot, int r, int c) {
     int n = key.size();
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
@@ -20,7 +20,7 @@ void match(vector<vector<int>> newLock, vector<vector<int>> key, int rot, int r,
     }
 }
 
-bool check(vector<vector<int>> newLock, int offset, int n) {
+bool check(int newLock[58][58], int offset, int n) {
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
             if(newLock[offset+i][offset+j] != 1) {
@@ -36,7 +36,7 @@ bool solution(vector<vector<int>> key, vector<vector<int>> lock) {
     for(int r = 0; r < offset + lock.size(); r++) {
         for(int c = 0; c < offset + lock.size(); c++) {
             for(int rot = 0; rot < 4; rot++) { //clock 90
-                vector<vector<int>> newLock(0);
+                int newLock[58][58] = {0};
                 for(int i=0; i<lock.size(); i++) {
                     for(int j=0; j<lock.size(); j++) {
                         newLock[i + offset][j + offset] = lock[i][j]; //copy lock
