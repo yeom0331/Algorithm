@@ -1,4 +1,4 @@
-#include "luck_strike.h"
+#include "implementation.h"
 
 static int n;
 

@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 #include "luck_strike.h"
-#include "rearrange_string.h"
-#include "compression_string.h"
+#include "implementation.h"
 
 using namespace std;
 
@@ -135,5 +134,7 @@ int main()
     //D();
     //luck_strike();
     //rearrange_string();
-    compression_string();
+    //compression_string();
+    //snake();
+    //chicken();
 }

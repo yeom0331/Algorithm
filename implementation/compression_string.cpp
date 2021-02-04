@@ -1,4 +1,4 @@
-#include "compression_string.h"
+#include "implementation.h"
 
 
 int solution(string s) {

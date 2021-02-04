@@ -1,4 +1,4 @@
-#include "rearrange_string.h"
+#include "implementation.h"
 
 static string s;
 static vector<char> result;

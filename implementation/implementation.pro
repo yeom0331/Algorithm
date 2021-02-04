@@ -4,14 +4,14 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        chicken.cpp \
         compression_string.cpp \
         lockandkey.cpp \
         luck_strike.cpp \
         main.cpp \
-        rearrange_string.cpp
+        rearrange_string.cpp \
+        snake.cpp
 
 HEADERS += \
-    compression_string.h \
-    lockandkey.h \
-    luck_strike.h \
-    rearrange_string.h
+    implementation.h \
+
