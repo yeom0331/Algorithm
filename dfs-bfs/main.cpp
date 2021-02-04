@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include "dfs-bfs.h"
 
 int visited[9], n, m, x, y, result;
 vector<int> graph[9];
@@ -248,4 +246,5 @@ int main()
     //bfs_main();
     //A();
     //escape_mirror();
+    thelab();
 }
