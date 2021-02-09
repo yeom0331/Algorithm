@@ -4,6 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        c_infection.cpp \
+        change_bracket.cpp \
+        find_city.cpp \
         main.cpp \
         thelab.cpp
 

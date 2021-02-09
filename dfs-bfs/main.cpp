@@ -246,5 +246,8 @@ int main()
     //bfs_main();
     //A();
     //escape_mirror();
-    thelab();
+    //thelab();
+    //find_city();
+    //c_infection();
+    change_bracket();
 }
