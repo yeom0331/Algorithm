@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "sort.h"
 
 using namespace std;
 
@@ -101,21 +101,21 @@ void top_to_bottom() {
     }
 }
 
-class student {
+class student1 {
 public:
     string name;
     int score;
-    student(string name, int score) {
+    student1(string name, int score) {
         this->name = name;
         this->score = score;
     }
 
-    bool operator < (student &other) { // 정렬 기준은 '점수가 낮은 순서'
+    bool operator < (student1 &other) { // 정렬 기준은 '점수가 낮은 순서'
         return this->score < other.score;
     }
 };
 
-vector<student> s;
+vector<student1> s;
 
 void grade() {
     cin >> n;
@@ -123,7 +123,7 @@ void grade() {
         string name;
         int score;
         cin >> name >> score;
-        s.push_back(student(name, score));
+        s.push_back(student1(name, score));
     }
     sort(s.begin(), s.end());
 
@@ -163,6 +163,7 @@ void replace_ab() {
     cout << result << endl;
 }
 
+
 int main()
 {
     //s_sort();
@@ -172,4 +173,7 @@ int main()
     //top_to_bottom();
     //grade();
     //replace_ab();
+    //kem();
+    //antenna();
+    card();
 }
